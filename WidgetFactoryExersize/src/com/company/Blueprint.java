@@ -6,7 +6,6 @@ public class Blueprint
 {
     private String _id;
     private HashMap<String, Integer> requiredParts = new HashMap<>();
-    // TODO: Make inputs and outputs for required parts
 
     public Blueprint(String id)
     {
@@ -17,6 +16,34 @@ public class Blueprint
     {
         Integer partCount = requiredParts.getOrDefault(partId, 0);
         requiredParts.put(partId, partCount + 1);
+    }
+
+    public void SetRequiredPartCount(String partId, Integer count)
+    {
+        requiredParts.put(partId, count);
+    }
+
+    public void ReduceRequiredPart(String partId)
+    {
+        Integer count = requiredParts.getOrDefault(partId, 0);
+
+        if (count > 0) requiredParts.put(partId, count-1);
+    }
+
+    public void DeleteRequiredPart(String partId)
+    {
+        requiredParts.remove(partId);
+    }
+
+    public String ToString()
+    {
+        StringBuilder toReturn = new StringBuilder();
+
+        toReturn.append("ID: "); toReturn.append(_id);
+
+        // TODO: Print the required parts
+
+        return toReturn.toString();
     }
 
     // Getters and setters
