@@ -381,3 +381,8 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# Widget Factory user files
+WidgetFactoryExersize/Finished Widgets.txt
+WidgetFactoryExersize/order.txt
+WidgetFactoryExersize/specification.txt
