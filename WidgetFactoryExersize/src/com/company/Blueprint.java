@@ -35,13 +35,19 @@ public class Blueprint
         requiredParts.remove(partId);
     }
 
-    public String ToString()
+    public HashMap<String, Integer> GetRequiredParts() { return requiredParts; }
+
+    public String toString()
     {
         StringBuilder toReturn = new StringBuilder();
 
-        toReturn.append("ID: "); toReturn.append(_id);
+        toReturn.append("ID: " + _id + "\n");
 
-        // TODO: Print the required parts
+        requiredParts.forEach((k, v) ->
+        {
+            toReturn.append("\tPart ID: " + k);
+            toReturn.append("\n\t\t" + k + "s Required: " + v + "\n");
+        });
 
         return toReturn.toString();
     }
