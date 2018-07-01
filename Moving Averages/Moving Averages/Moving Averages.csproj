@@ -66,14 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CalculateDSToString.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +102,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculate Averages\Calculate Averages.csproj">
+      <Project>{AF1E8C11-63FD-42C2-817C-0E8A241C46CB}</Project>
+      <Name>Calculate Averages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSetAccess\DataSetAccess.csproj">
+      <Project>{BE1F351B-0CDF-47C1-B97A-AE5F156608F6}</Project>
+      <Name>DataSetAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataStorage\DataStorage.csproj">
       <Project>{bca70af3-02a5-47f4-aeb7-237aefed8f7d}</Project>
       <Name>DataStorage</Name>
