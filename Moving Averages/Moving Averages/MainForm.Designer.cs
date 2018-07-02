@@ -55,6 +55,7 @@
 			this.lbxDataSets.DisplayMember = "name";
 			this.lbxDataSets.Dock = System.Windows.Forms.DockStyle.Left;
 			this.lbxDataSets.FormattingEnabled = true;
+			this.lbxDataSets.HorizontalScrollbar = true;
 			this.lbxDataSets.ItemHeight = 16;
 			this.lbxDataSets.Location = new System.Drawing.Point(0, 0);
 			this.lbxDataSets.Name = "lbxDataSets";
@@ -127,6 +128,7 @@
 			// lbxValues
 			// 
 			this.lbxValues.FormattingEnabled = true;
+			this.lbxValues.HorizontalScrollbar = true;
 			this.lbxValues.ItemHeight = 16;
 			this.lbxValues.Location = new System.Drawing.Point(149, 20);
 			this.lbxValues.Name = "lbxValues";
