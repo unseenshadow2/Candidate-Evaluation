@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Calculate_Averages
 {
+	/// <summary>
+	/// Handles the actual calculating of the averages.
+	/// </summary>
 	public static class Averages
 	{
 		/// <summary>

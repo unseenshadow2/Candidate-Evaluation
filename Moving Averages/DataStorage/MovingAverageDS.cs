@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace DataStorage
 {
+	/// <summary>
+	/// The Entity Framework code first data storage class
+	/// for the datasets used for calculating the moving
+	/// averages.
+	/// </summary>
     public class MovingAverageDS
     {
 		public int id { get; set; }

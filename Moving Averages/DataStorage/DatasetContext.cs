@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataStorage
 {
+	/// <summary>
+	/// The database context for interacting with the datasets
+	/// that are stored in the SQLite file.
+	/// </summary>
 	public class DatasetContext : DbContext
 	{
 		public DatasetContext() : base("name=default")

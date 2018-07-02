@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace Moving_Averages
 {
+	/// <summary>
+	/// The GUI interface for the driver program.
+	/// </summary>
 	public partial class MainForm : Form
 	{
 		private int _activeId = -1;

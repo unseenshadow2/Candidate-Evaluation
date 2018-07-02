@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Calculate_Averages
 {
+	/// <summary>
+	/// Handles determining if an average should be calculated as
+	/// a cumulative or moving average and then calculates the
+	/// average.
+	/// </summary>
     public static class MovingAverage
     {
 		/// <summary>

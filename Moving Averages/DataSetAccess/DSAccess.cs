@@ -11,6 +11,10 @@ public enum DSFindBy { Id, Data, WindowSize, Name }
 
 namespace MovingAverageDSAccess
 {
+	/// <summary>
+	/// A helper to smooth out the interaction between the
+	/// Presentation Layer and the database.
+	/// </summary>
     public static class DSAccess
     {
 		/// <summary>

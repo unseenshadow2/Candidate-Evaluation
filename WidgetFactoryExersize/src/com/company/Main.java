@@ -12,6 +12,9 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.nio.file.Files;
 
+/**
+ * The main class. The program itself.
+ */
 public class Main
 {
     private static Warehouse warehouse = new Warehouse();
@@ -21,6 +24,11 @@ public class Main
     private static String orderFilepath = "order.txt";
     private static String outputFilepath = "Finished Widgets.txt";
 
+    /**
+     * The entry and exit point of the program.
+     *
+     * @param args The arguments passed in from the command line
+     */
     public static void main(String[] args)
     {
         StringBuilder output = new StringBuilder();
@@ -82,6 +90,12 @@ public class Main
         System.out.println("Please check " + outputFilepath + " to view your produced widgets.");
     }
 
+    /**
+     * Generates a blueprint for testing Blueprint.toString and
+     * certain factory functions.
+     *
+     * @return A manually created blueprint
+     */
     public static Blueprint BlueprintDebug()
     {
         Blueprint blue = new Blueprint("Car");
@@ -100,6 +114,10 @@ public class Main
         return blue;
     }
 
+    /**
+     * A debug function for testing the functionality of all systems
+     * except the file system.
+     */
     public static void TestFactory()
     {
         String specString = "motorcycle: wheel, wheel, engine, seat, handlebar, car: wheel, wheel, wheel, wheel, engine, seat, steering wheel, sunroof, truck: wheel, wheel, wheel, wheel, engine, seat, steering wheel, truck-bed";

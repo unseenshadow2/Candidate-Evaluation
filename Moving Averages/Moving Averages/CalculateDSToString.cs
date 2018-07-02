@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Moving_Averages
 {
+	/// <summary>
+	/// Handle converting datasets into strings.
+	/// </summary>
 	public static class CalculateDSToString
 	{
 		/// <summary>
