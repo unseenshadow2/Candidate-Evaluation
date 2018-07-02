@@ -36,6 +36,12 @@ namespace Moving_Averages
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Setup the two listboxes and the minimums and maximums
+		/// of the two numeric up downs.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			SetupDatasets();
@@ -46,6 +52,11 @@ namespace Moving_Averages
 			nudWindowSize.Minimum = decimal.MinValue;
 		}
 
+		/// <summary>
+		/// Calculate the selected dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnCalculate_Click(object sender, EventArgs e)
 		{
 			if (activeId == -1)
@@ -70,6 +81,11 @@ namespace Moving_Averages
 			}
 		}
 
+		/// <summary>
+		/// Calculate all of the datasets.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnCalculateAll_Click(object sender, EventArgs e)
 		{
 			string outputFileName;
@@ -103,6 +119,11 @@ namespace Moving_Averages
 			}
 		}
 
+		/// <summary>
+		/// Update the data entry area.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void lbxDataSets_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			MovingAverageDS ds = lbxDataSets.SelectedItem as MovingAverageDS;
@@ -120,34 +141,66 @@ namespace Moving_Averages
 			else ClearDisplay();
 		}
 
+		/// <summary>
+		/// Update nudValue with the currently selected value.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void lbxValues_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (lbxValues.SelectedItem == null) nudValue.Value = 0;
 			else nudValue.Value = (decimal)((double)lbxValues.SelectedItem);
 		}
 
+		/// <summary>
+		/// Remove the selected value from the current dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnRemoveValue_Click(object sender, EventArgs e)
 		{
 			_values.RemoveAt(lbxValues.SelectedIndex);
 			lbxValues.SelectedIndex = 0;
 		}
 
+		/// <summary>
+		/// Add the value of nudValue to the current dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnAddValue_Click(object sender, EventArgs e)
 		{
 			_values.Add((double)nudValue.Value);
 		}
 
+		/// <summary>
+		/// Update the selected value within the selected dataset to the
+		/// value of nudValue.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnUpdateValue_Click(object sender, EventArgs e)
 		{
 			_values[lbxValues.SelectedIndex] = (double)nudValue.Value;
 		}
 
+		/// <summary>
+		/// Deselect current dataset and clear data entry area. Inform
+		/// program that we are editing a new dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnNew_Click(object sender, EventArgs e)
 		{
 			ClearDisplay();
 			activeId = -1;
 		}
 
+		/// <summary>
+		/// Delete the currently selected dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			if (activeId != -1)
@@ -165,6 +218,12 @@ namespace Moving_Averages
 			}
 		}
 
+		/// <summary>
+		/// Save the currently selected dataset. If no dataset is
+		/// selected, uses the data entry area to create a dataset.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnSave_Click(object sender, EventArgs e)
 		{
 			MovingAverageDS ds = new MovingAverageDS();
@@ -186,6 +245,9 @@ namespace Moving_Averages
 			UpdateDatasets();
 		}
 
+		/// <summary>
+		/// Setup lbxDataSets and its data source.
+		/// </summary>
 		private void SetupDatasets()
 		{
 			lbxDataSets.DataSource = _listData;
@@ -194,6 +256,12 @@ namespace Moving_Averages
 			UpdateDatasets(true);
 		}
 
+		/// <summary>
+		/// Update the datasets that are visible to the user. Should be
+		/// run any time a dataset is added, removed, or a dataset's name
+		/// is changed.
+		/// </summary>
+		/// <param name="isSetupOrRemove"></param>
 		private void UpdateDatasets(bool isSetupOrRemove = false)
 		{
 			string name = txtName.Text;
@@ -209,12 +277,21 @@ namespace Moving_Averages
 			else lbxDataSets.ClearSelected();
 		}
 
+		/// <summary>
+		/// Setup lbxValues and its data source.
+		/// </summary>
 		private void SetupValues()
 		{
 			lbxValues.DataSource = _values;
 			UpdateValues(true);
 		}
 
+		/// <summary>
+		/// Update the values displayed to the user. This should be run
+		/// every time that a value is altered, a new dataset is loaded,
+		/// or the dataset is cleared.
+		/// </summary>
+		/// <param name="isClearing"></param>
 		private void UpdateValues(bool isClearing = false)
 		{
 			if (isClearing) _values.Clear();
@@ -234,6 +311,9 @@ namespace Moving_Averages
 			}
 		}
 
+		/// <summary>
+		/// Clear the data entry area.
+		/// </summary>
 		private void ClearDisplay()
 		{
 			_values.Clear();
@@ -244,6 +324,12 @@ namespace Moving_Averages
 			lbxValues.ClearSelected();
 		}
 
+		/// <summary>
+		/// Check if a dataset with the same ID exists, and if it does
+		/// set the activeId to it. Should be called around the time of
+		/// delete operations to ensure that the ID exists.
+		/// </summary>
+		/// <param name="id">The ID to be searched for in the _listdata</param>
 		private void SelectDSById(int id)
 		{
 			activeId = -1;

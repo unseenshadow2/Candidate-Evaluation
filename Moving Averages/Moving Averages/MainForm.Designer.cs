@@ -70,7 +70,7 @@
 			this.btnCalculateAll.Location = new System.Drawing.Point(494, 434);
 			this.btnCalculateAll.Name = "btnCalculateAll";
 			this.btnCalculateAll.Size = new System.Drawing.Size(234, 36);
-			this.btnCalculateAll.TabIndex = 1;
+			this.btnCalculateAll.TabIndex = 11;
 			this.btnCalculateAll.Text = "Calculate All Moving Averages";
 			this.btnCalculateAll.UseVisualStyleBackColor = true;
 			this.btnCalculateAll.Click += new System.EventHandler(this.btnCalculateAll_Click);
@@ -81,7 +81,7 @@
 			this.btnCalculate.Location = new System.Drawing.Point(254, 434);
 			this.btnCalculate.Name = "btnCalculate";
 			this.btnCalculate.Size = new System.Drawing.Size(234, 36);
-			this.btnCalculate.TabIndex = 2;
+			this.btnCalculate.TabIndex = 10;
 			this.btnCalculate.Text = "Calculate Moving Average";
 			this.btnCalculate.UseVisualStyleBackColor = true;
 			this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -97,7 +97,7 @@
 			this.btnSave.Location = new System.Drawing.Point(637, 392);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(91, 36);
-			this.btnSave.TabIndex = 3;
+			this.btnSave.TabIndex = 9;
 			this.btnSave.Text = "Save";
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -108,7 +108,7 @@
 			this.btnDelete.Location = new System.Drawing.Point(540, 392);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(91, 36);
-			this.btnDelete.TabIndex = 4;
+			this.btnDelete.TabIndex = 8;
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -119,7 +119,7 @@
 			this.btnNew.Location = new System.Drawing.Point(443, 392);
 			this.btnNew.Name = "btnNew";
 			this.btnNew.Size = new System.Drawing.Size(91, 36);
-			this.btnNew.TabIndex = 5;
+			this.btnNew.TabIndex = 7;
 			this.btnNew.Text = "New";
 			this.btnNew.UseVisualStyleBackColor = true;
 			this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -132,6 +132,7 @@
 			this.lbxValues.Name = "lbxValues";
 			this.lbxValues.Size = new System.Drawing.Size(120, 356);
 			this.lbxValues.TabIndex = 6;
+			this.lbxValues.UseTabStops = false;
 			this.lbxValues.SelectedIndexChanged += new System.EventHandler(this.lbxValues_SelectedIndexChanged);
 			// 
 			// label1
@@ -154,21 +155,21 @@
             0});
 			this.nudValue.Name = "nudValue";
 			this.nudValue.Size = new System.Drawing.Size(120, 22);
-			this.nudValue.TabIndex = 8;
+			this.nudValue.TabIndex = 3;
 			// 
 			// txtName
 			// 
 			this.txtName.Location = new System.Drawing.Point(275, 40);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(123, 22);
-			this.txtName.TabIndex = 9;
+			this.txtName.TabIndex = 1;
 			// 
 			// btnRemoveValue
 			// 
 			this.btnRemoveValue.Location = new System.Drawing.Point(149, 382);
 			this.btnRemoveValue.Name = "btnRemoveValue";
 			this.btnRemoveValue.Size = new System.Drawing.Size(120, 36);
-			this.btnRemoveValue.TabIndex = 10;
+			this.btnRemoveValue.TabIndex = 6;
 			this.btnRemoveValue.Text = "Remove Value";
 			this.btnRemoveValue.UseVisualStyleBackColor = true;
 			this.btnRemoveValue.Click += new System.EventHandler(this.btnRemoveValue_Click);
@@ -183,7 +184,7 @@
             0});
 			this.nudWindowSize.Name = "nudWindowSize";
 			this.nudWindowSize.Size = new System.Drawing.Size(120, 22);
-			this.nudWindowSize.TabIndex = 11;
+			this.nudWindowSize.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -217,7 +218,7 @@
 			this.btnAddValue.Location = new System.Drawing.Point(275, 203);
 			this.btnAddValue.Name = "btnAddValue";
 			this.btnAddValue.Size = new System.Drawing.Size(116, 36);
-			this.btnAddValue.TabIndex = 15;
+			this.btnAddValue.TabIndex = 4;
 			this.btnAddValue.Text = "Add Value";
 			this.btnAddValue.UseVisualStyleBackColor = true;
 			this.btnAddValue.Click += new System.EventHandler(this.btnAddValue_Click);
@@ -227,13 +228,14 @@
 			this.btnUpdateValue.Location = new System.Drawing.Point(397, 203);
 			this.btnUpdateValue.Name = "btnUpdateValue";
 			this.btnUpdateValue.Size = new System.Drawing.Size(116, 36);
-			this.btnUpdateValue.TabIndex = 16;
+			this.btnUpdateValue.TabIndex = 5;
 			this.btnUpdateValue.Text = "Update Value";
 			this.btnUpdateValue.UseVisualStyleBackColor = true;
 			this.btnUpdateValue.Click += new System.EventHandler(this.btnUpdateValue_Click);
 			// 
 			// MainForm
 			// 
+			this.AcceptButton = this.btnSave;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;

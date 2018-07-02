@@ -14,6 +14,10 @@ namespace DataStorage
         {
 		}
 
+		/// <summary>
+		/// Setup the context in code first Entity Framework.
+		/// </summary>
+		/// <param name="modelBuilder"></param>
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			SqliteDropCreateDatabaseWhenModelChanges<DatasetContext> sqliteConnectionInitializer = new SqliteDropCreateDatabaseWhenModelChanges<DatasetContext>(modelBuilder);

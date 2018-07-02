@@ -9,6 +9,11 @@ namespace ConsoleOut
 {
 	class Program
 	{
+		/// <summary>
+		/// A quick test of the averaging algorithms. Use the project
+		/// "Moving Averages" instead.
+		/// </summary>
+		/// <param name="args"></param>
 		static void Main(string[] args)
 		{
 			double[] data = { 0, 1, -2, 3, -4, 5, -6, 7, -8, 9 };

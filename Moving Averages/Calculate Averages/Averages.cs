@@ -8,6 +8,16 @@ namespace Calculate_Averages
 {
 	public static class Averages
 	{
+		/// <summary>
+		/// Calculate the average of the given data. If no windowSize is provided, the
+		/// average is cumulative using the currentAverage. If windowSize is a value other
+		/// than 0, then the average is calculated based of off the past windowSize values.
+		/// </summary>
+		/// <param name="data">The array of data to calculate the average from</param>
+		/// <param name="currentAverage">The current average before the given data. Used for cumulative averages</param>
+		/// <param name="position">The position of the data we are calculating</param>
+		/// <param name="windowSize">The window size of the moving average. If a value other than 0, a moving average will be calculated</param>
+		/// <returns>The average of the data given</returns>
 		public static double Average(double[] data, double currentAverage, int position, int windowSize = 0)
 		{
 			if (windowSize == 0)
@@ -20,6 +30,13 @@ namespace Calculate_Averages
 			}
 		}
 
+		/// <summary>
+		/// Calculates a simple moving average.
+		/// </summary>
+		/// <param name="data">The array of data to calculate the average from</param>
+		/// <param name="position">The position to calculate the simple moving average from within the data</param>
+		/// <param name="windowSize">The window size for the moving average</param>
+		/// <returns>The simple moving average</returns>
 		private static double SimpleMoving(double[] data, int position, int windowSize)
 		{
 			double toReturn = 0;
